@@ -1,5 +1,13 @@
 # system-programming
-3-2 System programming (femu)
+System programming class (femu) 3-2
+
+# Prepare
+- `git clone https://github.com/vtess/FEMU`
+- `wsl -e bash --login -c "cd $(cd && pwd)/femu/build-femu/ && ./run-blackbox.sh"` or use `wsl-femu-start.bat`
+- femu pw : femu
+- If logged in femu, run `./install-requirements.sh` for fio, sysbench test
+- Run `./femu-ssd-mount.sh` every start femu
+- Enjoy your projects!
 
 # Project 1
 
