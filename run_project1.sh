@@ -36,15 +36,15 @@ echo "====== SYS-BENCH START ======"
 echo "====== =============== ======"
 
 ssh femu "sudo rm -f /mnt/nvme0n1/test_file.*"
-ssh femu "cd /mnt/nvme0n1 && sudo sysbench fileio --threads=32 --file-total-size=2304M --file-test-mode=rndrw prepare"
-ssh femu "cd /mnt/nvme0n1 && sudo sysbench fileio --threads=32 --file-total-size=2304M --file-extra-flags=direct --file-fsync-all=on --file-test-mode=rndrw --time=300 run"
+ssh femu "cd /mnt/nvme0n1 && sudo sysbench fileio --threads=32 --file-total-size=1152M --file-test-mode=rndrw prepare"
+ssh femu "cd /mnt/nvme0n1 && sudo sysbench fileio --threads=32 --file-total-size=1152M --file-extra-flags=direct --file-fsync-all=on --file-test-mode=rndrw --time=300 run"
 mv io_count.log io_count_sysbench_th32.log
 mv gc_count.log gc_count_sysbench_th32.log
 rm -f io_count.log
 rm -f gc_count.log
 ssh femu "sudo rm -f /mnt/nvme0n1/test_file.*"
-ssh femu "cd /mnt/nvme0n1 && sudo sysbench fileio --threads=4 --file-total-size=2304M --file-test-mode=rndrw prepare"
-ssh femu "cd /mnt/nvme0n1 && sudo sysbench fileio --threads=4 --file-total-size=2304M --file-extra-flags=direct --file-fsync-all=on --file-test-mode=rndrw --time=300 run"
+ssh femu "cd /mnt/nvme0n1 && sudo sysbench fileio --threads=4 --file-total-size=1152M --file-test-mode=rndrw prepare"
+ssh femu "cd /mnt/nvme0n1 && sudo sysbench fileio --threads=4 --file-total-size=1152M --file-extra-flags=direct --file-fsync-all=on --file-test-mode=rndrw --time=300 run"
 mv io_count.log io_count_sysbench_th4.log
 mv gc_count.log gc_count_sysbench_th4.log
 rm -f io_count.log
